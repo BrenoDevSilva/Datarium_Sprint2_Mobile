@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert, TouchableOpacity, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -48,10 +48,13 @@ const RegisterScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Cadastre-se</Text>
+      <StatusBar barStyle="light-content" />
+      <Text style={styles.title}>Datarium</Text>
+      <Text style={styles.subtitle}>Crie uma nova conta</Text>
       <TextInput
         style={styles.input}
         placeholder="Nome"
+        placeholderTextColor="#A0AEC0"
         value={nome}
         onChangeText={setNome}
         autoCapitalize="words"
@@ -59,6 +62,7 @@ const RegisterScreen = () => {
       <TextInput
         style={styles.input}
         placeholder="E-mail"
+        placeholderTextColor="#A0AEC0"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -67,6 +71,7 @@ const RegisterScreen = () => {
       <TextInput
         style={styles.input}
         placeholder="Senha"
+        placeholderTextColor="#A0AEC0"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
@@ -74,11 +79,14 @@ const RegisterScreen = () => {
       <TextInput
         style={styles.input}
         placeholder="Confirme sua Senha"
+        placeholderTextColor="#A0AEC0"
         value={confirmPassword}
         onChangeText={setConfirmPassword}
         secureTextEntry
       />
-      <Button title="Cadastrar" onPress={handleRegister} />
+      <TouchableOpacity style={styles.registerButton} onPress={handleRegister}>
+        <Text style={styles.registerButtonText}>Cadastrar</Text>
+      </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Login')}>
         <Text style={styles.link}>Já tem uma conta? Faça o login</Text>
       </TouchableOpacity>
@@ -89,26 +97,50 @@ const RegisterScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#0E172A',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
   },
   title: {
-    fontSize: 24,
-    marginBottom: 20,
+    fontSize: 42,
+    color: '#FFD700',
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  subtitle: {
+    fontSize: 18,
+    color: '#A0AEC0',
+    marginBottom: 40,
   },
   input: {
     width: '100%',
     height: 50,
-    borderColor: 'gray',
+    backgroundColor: '#1E2841',
+    color: '#FFF',
+    borderColor: '#2D3748',
     borderWidth: 1,
-    marginBottom: 10,
-    paddingHorizontal: 10,
+    marginBottom: 15,
+    paddingHorizontal: 15,
     borderRadius: 8,
   },
+  registerButton: {
+    width: '100%',
+    backgroundColor: '#FFD700',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  registerButtonText: {
+    color: '#0E172A',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
   link: {
-    marginTop: 15,
-    color: 'blue',
+    marginTop: 20,
+    color: '#A0AEC0',
+    fontSize: 14,
   },
 });
 
