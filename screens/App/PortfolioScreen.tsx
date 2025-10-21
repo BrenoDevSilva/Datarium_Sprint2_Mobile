@@ -6,7 +6,7 @@ import AssetCard from '../../components/AssetCard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 
-const API_URL = "http://192.168.0.110:8080";
+const API_URL = "http://192.168.15.73:8080";
 const screenWidth = Dimensions.get('window').width;
 
 const PortfolioScreen = () => {

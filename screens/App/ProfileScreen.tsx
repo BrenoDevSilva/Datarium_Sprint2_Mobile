@@ -4,7 +4,7 @@ import { Picker } from "@react-native-picker/picker";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const API_URL = "http://192.168.0.110:8080";
+const API_URL = "http://192.168.15.73:8080";
 
 const ProfileScreen = () => {
   const [loading, setLoading] = useState(true);
