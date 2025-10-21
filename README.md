@@ -118,14 +118,18 @@ Após configurar o IP e garantir que a API Java esteja rodando:
 
 # 📸 Evidências do Projeto
 
-| Tela de Login | Tela de Cadastro |
+| Tela de Cadastro | Cadastro Sucesso |
 | :---: | :---: |
-| ![Tela de Login](evidencias/imagem1.png) | ![Tela de Cadastro](evidencias/imagem2.png) |
-| **Dashboard (Home)** | **Portfólio (com Ativos)** |
-| ![Dashboard](evidencias/imagem3.png) | ![Portfólio](evidencias/imagem4.png) |
-| **Detalhe Gráfico (Portfólio)** | **Tela "Adicionar Ativo"** |
-| ![Gráfico Portfólio](evidencias/imagem5.png) | ![Adicionar Ativo](evidencias/imagem6.png) |
-| **Tela de Perfil** | **Editando Perfil** |
-| ![Tela de Perfil](evidencias/imagem7.png) | ![Editando Perfil](evidencias/imagem8.png) |
-| **Tela de Explicações** | **Explicações (Expandido)** |
-| ![Tela Explicações](evidencias/imagem9.png) | ![Explicações Expandido](evidencias/imagem10.png) |
+| ![Tela de Cadastro](evidencias/tela_cadastro.png) | ![Cadastro Sucesso](evidencias/sucesso_cadastro.png) |
+| **Login Sucesso (Home)** | **Adição Ativo** |
+| ![Login Sucesso](evidencias/login_realizado.png) | ![Adição Ativo](evidencias/adicao_ativo.png) |
+| **Sucesso Adição Ativo1** | **Sucesso Adição Ativo2** |
+| ![Sucesso Ativo1](evidencias/sucesso_ativo1.png) | ![Sucesso Ativo2](evidencias/sucesso_ativo2.png) |
+| **Tela de Portifólio** | **Editando Perfil** |
+| ![Tela de Portifólio](evidencias/tela_portifolio.png) | ![Editando Perfil](evidencias/edicao_perfil.png) |
+| **Sucesso Edição Perfil** | **Dashboard (Home)** |
+| ![Tela Sucesso Edição Perfil](evidencias/sucesso_perfil.png) | ![Dashboard](evidencias/dashboard_home.png) |
+| **Logout** | **Banco de Dados Datarium - Cliente** |
+| ![Tela Logout](evidencias/sessao_encerrada.png) | ![Datarium Banco Cliente](evidencias/datarium_cliente_banco.png) |
+| **Banco de Dados Datarium - Ativos** |
+| ![Datarium Banco Ativos](evidencias/datarium_ativo_banco.png) |
