@@ -32,11 +32,28 @@ O **Datarium** é uma plataforma de assessoramento virtual de investimentos, des
         npm install
         ```
 
-3.  **Execução da Aplicação**:
-    * Certifique-se de que a sua **API Java está rodando** (veja as instruções abaixo).
-    * No terminal, inicie o projeto com o comando:
+3.  **Configuração da URL da API**:
+    * Este aplicativo precisa se conectar à API Java (`Datarium_Sprint2_Api_Java`). Certifique-se de que a API esteja rodando localmente (veja as instruções na seção Back-end).
+    * **Você precisará editar o código-fonte do aplicativo para apontar para o IP correto da sua máquina.**
+    * Descubra o endereço IP local (IPv4) da máquina onde a API Java está sendo executada (No Windows: `ipconfig`; No macOS/Linux: `ip addr` ou `ifconfig`).
+    * Abra os seguintes arquivos no projeto React Native:
+        * `screens/Auth/LoginScreen.tsx`
+        * `screens/Auth/RegisterScreen.tsx`
+        * `screens/App/PortfolioScreen.tsx`
+        * `screens/App/AddAssetScreen.tsx`
+        * `screens/App/ProfileScreen.tsx`
+    * Em cada um desses arquivos, localize a linha que define a constante `API_URL`:
+        ```javascript
+        const API_URL = "http://ENDERECO_IP_EXEMPLO:8080";
+        ```
+    * **Substitua `ENDERECO_IP_EXEMPLO` pelo endereço IP que você descobriu.** Certifique-se de fazer isso em **todos** os arquivos listados acima.
+    * *Nota:* Certifique-se de que o dispositivo/emulador rodando o app esteja na mesma rede Wi-Fi que o computador rodando a API.
+
+4.  **Execução da Aplicação**:
+    * Certifique-se de que a sua **API Java está rodando**.
+    * No terminal, inicie o projeto com o comando (recomendado limpar o cache após alterar o IP):
         ```bash
-        npx expo start
+        npx expo start -c
         ```
     * Escaneie o QR Code com o aplicativo Expo Go no seu celular ou pressione `a` no terminal para abrir no emulador Android.
 
