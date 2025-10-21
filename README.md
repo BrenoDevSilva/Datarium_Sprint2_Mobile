@@ -1,8 +1,10 @@
-# Datarium Mobile
+# Datarium Mobile 📱
 
-### **Visão Geral**
+Este é o repositório do projeto **Datarium Mobile**, a interface de usuário (front-end) da plataforma de assessoramento virtual de investimentos. O projeto foi desenvolvido em React Native com Expo para o desafio da **XP Inc.** e FIAP.
 
-O **Datarium** é uma plataforma de assessoramento virtual de investimentos, desenvolvida para o desafio da **XP Inc.** e FIAP. Este projeto mobile é a interface do usuário que se comunica com uma API Java para todas as operações de cadastro, login e visualização dos dados do portfólio.
+Este aplicativo se conecta a uma API Java (Spring Boot) para todas as operações de cadastro, login e gerenciamento de portfólio.
+
+---
 
 ### **Participantes do Grupo**
 
@@ -11,82 +13,119 @@ O **Datarium** é uma plataforma de assessoramento virtual de investimentos, des
 * **Danilo Urze** - RM 99465
 * **Gabriel Pacheco** - RM 550191
 
-### **Tecnologias Utilizadas**
+---
 
-* **Front-end**: React Native com Expo e TypeScript.
-* **Back-end**: Java 17, Spring Boot, Spring Data JPA e Oracle Database.
+### **🛠️ Tecnologias Utilizadas**
+
+* **Front-end**: React Native, Expo, TypeScript.
+* **Navegação**: React Navigation (Stack e Bottom Tabs).
+* **Armazenamento Local**: AsyncStorage (para salvar o ID do usuário e email).
+* **Gráficos**: `react-native-chart-kit`.
+* **Back-end (Dependência)**: Java 17, Spring Boot, Oracle Database.
 
 ---
 
-### **Como Rodar o Projeto (Front-end Mobile)**
+# ⚠️ Atenção: Configuração Obrigatória da API
 
-1.  **Pré-requisitos**:
-    * Node.js e npm instalados.
-    * Um emulador Android ou iOS (configurado via Android Studio ou Xcode).
-    * O aplicativo **Expo Go** instalado no seu celular ou emulador.
+Para que este aplicativo mobile funcione, ele **precisa** se conectar à API Java (back-end). Siga os passos abaixo **antes** de executar o app.
 
-2.  **Instalação das Dependências**:
-    * Abra o terminal na pasta do projeto mobile (`DatariumMobile`).
-    * Execute o seguinte comando para instalar todas as dependências:
-        ```bash
-        npm install
-        ```
+### 1. Execute a API Java
 
-3.  **Configuração da URL da API**:
-    * Este aplicativo precisa se conectar à API Java (`Datarium_Sprint2_Api_Java`). Certifique-se de que a API esteja rodando localmente (veja as instruções na seção Back-end).
-    * **Você precisará editar o código-fonte do aplicativo para apontar para o IP correto da sua máquina.**
-    * Descubra o endereço IP local (IPv4) da máquina onde a API Java está sendo executada (No Windows: `ipconfig`; No macOS/Linux: `ip addr` ou `ifconfig`).
-    * Abra os seguintes arquivos no projeto React Native:
-        * `screens/Auth/LoginScreen.tsx`
-        * `screens/Auth/RegisterScreen.tsx`
-        * `screens/App/PortfolioScreen.tsx`
-        * `screens/App/AddAssetScreen.tsx`
-        * `screens/App/ProfileScreen.tsx`
-    * Em cada um desses arquivos, localize a linha que define a constante `API_URL`:
-        ```javascript
-        const API_URL = "http://ENDERECO_IP_EXEMPLO:8080";
-        ```
-    * **Substitua `ENDERECO_IP_EXEMPLO` pelo endereço IP que você descobriu.** Certifique-se de fazer isso em **todos** os arquivos listados acima.
-    * *Nota:* Certifique-se de que o dispositivo/emulador rodando o app esteja na mesma rede Wi-Fi que o computador rodando a API.
+* Certifique-se de que a API Java do projeto esteja rodando na sua máquina.
+* Você pode encontrar o repositório da API [**AQUI**](https://github.com/BrenoDevSilva/Datarium_Sprint2_Api_Java).
+* Siga as instruções do `README.md` da API para iniciá-la (geralmente com o comando `mvn spring-boot:run`).
 
-4.  **Execução da Aplicação**:
-    * Certifique-se de que a sua **API Java está rodando**.
-    * No terminal, inicie o projeto com o comando (recomendado limpar o cache após alterar o IP):
-        ```bash
-        npx expo start -c
-        ```
-    * Escaneie o QR Code com o aplicativo Expo Go no seu celular ou pressione `a` no terminal para abrir no emulador Android.
+### 2. Encontre o Endereço IP da sua Máquina
+
+O aplicativo móvel precisa do endereço IP (IPv4) da sua máquina na sua rede local para se conectar ao servidor Java.
+
+* **No Windows:**
+    1.  Abra o Prompt de Comando (cmd).
+    2.  Digite `ipconfig` e pressione Enter.
+    3.  Procure pela sua conexão de rede (Wi-Fi ou Ethernet) e anote o valor do **Endereço IPv4** (Ex: `192.168.15.73`).
+* **No macOS / Linux:**
+    1.  Abra o Terminal.
+    2.  Digite `ifconfig` ou `ip addr show`.
+    3.  Procure pela sua conexão de rede (ex: `en0` ou `wlan0`) e anote o endereço `inet` (Ex: `192.168.15.73`).
+
+### 3. Atualize o IP no Código do Aplicativo
+
+Você **deve** substituir a variável `API_URL` em **todos** os arquivos abaixo pelo IP que você encontrou no passo anterior:
+
+* `screens/Auth/LoginScreen.tsx`
+* `screens/Auth/RegisterScreen.tsx`
+* `screens/App/PortfolioScreen.tsx`
+* `screens/App/AddAssetScreen.tsx`
+* `screens/App/ProfileScreen.tsx`
+
+**Exemplo de alteração:**
+
+```javascript
+// Altere esta linha em todos os arquivos listados:
+const API_URL = "http://192.168.15.73:8080";
+// Substitua pelo SEU IP e mantenha a porta :8080
+```
 
 ---
 
-### **Como Rodar o Projeto (Back-end Java)**
+# 🏁 Como Rodar o Projeto (APP Mobile)
 
-Este projeto requer que a API Java esteja em execução para que o aplicativo mobile funcione.
+Após configurar o IP e garantir que a API Java esteja rodando:
 
-1.  **Pré-requisitos**:
-    * **Java 17** e **Maven** instalados e configurados.
-    * Acesso ao banco de dados Oracle da FIAP.
+**1. Pré-requisitos:**
 
-2.  **Configuração do Banco de Dados**:
-    * Abra o arquivo `src/main/resources/application.properties`.
-    * **O projeto está configurado para rodar na minha conta pessoal do banco de dados Oracle.** Caso queira executá-lo em outra conta, por favor, mude as credenciais (`username` e `password`) para as suas.
-    ```properties
-    spring.datasource.url=jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
-    spring.datasource.username=RM99500
-    spring.datasource.password=100504
+* Node.js (LTS) e npm instalados.
+* `yarn` instalado (execute `npm install -g yarn` se não tiver).
+* O aplicativo **Expo Go** instalado no seu celular (iOS ou Android).
+
+**2. Instalação das Dependências:**
+
+* Abra um terminal na pasta raiz deste projeto (`sprint_mobile_datarium`).
+* Execute o comando:
+    ```bash
+    npm install
     ```
+    *(Se você executou `npm install` antes de instalar o `yarn`, talvez seja necessário apagar a pasta `node_modules` e rodar `npm install` novamente).*
 
-3.  **Execução da API a partir do Terminal**:
-    * Navegue até a pasta do projeto Java (`Datarium_Sprint2_Api_Java`).
-    * Execute o seguinte comando para construir e rodar a aplicação:
-        ```bash
-        mvn spring-boot:run
-        ```
-    * A API será executada na porta `8080` e estará pronta para aceitar requisições do aplicativo mobile.
+**3. Execução do Aplicativo:**
 
-### **Funcionalidades do Aplicativo**
+* No terminal, na pasta raiz do projeto, execute:
+    ```bash
+    npx expo start -c
+    ```
+* Isso iniciará o Metro Bundler e exibirá um QR Code no terminal.
+* Abra o app Expo Go no seu celular e escaneie o QR Code para carregar o aplicativo.
 
-* **Autenticação**: Telas de login e cadastro integradas à API Java.
-* **Navegação**: Navegação por abas (`Tab Navigation`) para as telas principais do aplicativo.
-* **Portfólio**: Tela que exibe o patrimônio total do cliente e a alocação de ativos em um gráfico de pizza, com dados buscados em tempo real da API.
-* **Explicações**: Seção educacional com informações sobre investimentos.
+---
+
+### ✨ Funcionalidades do Aplicativo
+
+* **Autenticação**: Telas de Login e Cadastro, com integração total com a API Java.
+* **Navegação**: Navegação por abas (Tab Navigator) para as telas de Home, Portfólio, Explicações e Perfil.
+* **Dashboard (Home)**: Tela inicial com recomendações personalizadas (mockado) e destaques do mercado (mockado).
+* **Portfólio**:
+    * Busca e exibe o patrimônio total do cliente (soma dos valores dos ativos) em tempo real via API.
+    * Exibe a alocação de ativos por tipo (`RENDA_FIXA`, `RENDA_VARIAVEL`, etc.) em um gráfico de pizza.
+    * Lista todos os ativos individuais do cliente.
+    * Permite adicionar novos ativos ao portfólio (integrado com `POST /ativos` da API).
+* **Perfil**:
+    * Busca os dados do perfil do usuário (`GET /clientes/{id}`).
+    * Permite ao usuário atualizar seu `PerfilInvestidor` e `Objetivo` (integrado com `PUT /clientes/{id}`).
+    * Função de Logout (limpa o AsyncStorage e reseta a navegação).
+* **Explicações**: Seção educacional estática com cartões expansíveis sobre finanças.
+
+---
+
+# 📸 Evidências do Projeto
+
+| Tela de Login | Tela de Cadastro |
+| :---: | :---: |
+| ![Tela de Login](evidencias/imagem1.png) | ![Tela de Cadastro](evidencias/imagem2.png) |
+| **Dashboard (Home)** | **Portfólio (com Ativos)** |
+| ![Dashboard](evidencias/imagem3.png) | ![Portfólio](evidencias/imagem4.png) |
+| **Detalhe Gráfico (Portfólio)** | **Tela "Adicionar Ativo"** |
+| ![Gráfico Portfólio](evidencias/imagem5.png) | ![Adicionar Ativo](evidencias/imagem6.png) |
+| **Tela de Perfil** | **Editando Perfil** |
+| ![Tela de Perfil](evidencias/imagem7.png) | ![Editando Perfil](evidencias/imagem8.png) |
+| **Tela de Explicações** | **Explicações (Expandido)** |
+| ![Tela Explicações](evidencias/imagem9.png) | ![Explicações Expandido](evidencias/imagem10.png) |
