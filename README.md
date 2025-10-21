@@ -118,18 +118,67 @@ Após configurar o IP e garantir que a API Java esteja rodando:
 
 # 📸 Evidências do Projeto
 
-| Tela de Cadastro | Cadastro Sucesso |
-| :---: | :---: |
-| ![Tela de Cadastro](evidencias/tela_cadastro.png) | ![Cadastro Sucesso](evidencias/sucesso_cadastro.png) |
-| **Login Sucesso (Home)** | **Adição Ativo** |
-| ![Login Sucesso](evidencias/login_realizado.png) | ![Adição Ativo](evidencias/adicao_ativo.png) |
-| **Sucesso Adição Ativo1** | **Sucesso Adição Ativo2** |
-| ![Sucesso Ativo1](evidencias/sucesso_ativo1.png) | ![Sucesso Ativo2](evidencias/sucesso_ativo2.png) |
-| **Tela de Portifólio** | **Editando Perfil** |
-| ![Tela de Portifólio](evidencias/tela_portifolio.png) | ![Editando Perfil](evidencias/edicao_perfil.png) |
-| **Sucesso Edição Perfil** | **Dashboard (Home)** |
-| ![Tela Sucesso Edição Perfil](evidencias/sucesso_perfil.png) | ![Dashboard](evidencias/dashboard_home.png) |
-| **Logout** | **Banco de Dados Datarium - Cliente** |
-| ![Tela Logout](evidencias/sessao_encerrada.png) | ![Datarium Banco Cliente](evidencias/datarium_cliente_banco.png) |
-| **Banco de Dados Datarium - Ativos** |
-| ![Datarium Banco Ativos](evidencias/datarium_ativo_banco.png) |
+<table>
+  <tr>
+    <td align="center">
+      <strong>Tela de Cadastro</strong><br>
+      <img src="evidencias/tela_cadastro.jpg" width="400">
+    </td>
+    <td align="center">
+      <strong>Sucesso ao Cadastrar</strong><br>
+      <img src="evidencias/sucesso_cadastro.jpg" width="400">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Login com Sucesso</strong><br>
+      <img src="evidencias/login_realizado.jpg" width="400">
+    </td>
+    <td align="center">
+      <strong>Dashboard (Home)</strong><br>
+      <img src="evidencias/dashboard_home.jpg" width="400">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Tela de Portfólio</strong><br>
+      <img src="evidencias/tela_portifolio.jpg" width="400">
+    </td>
+    <td align="center">
+      <strong>Tela de Adição de Ativo</strong><br>
+      <img src="evidencias/adicao_ativo.jpg" width="400">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Sucesso ao Adicionar Ativo I</strong><br>
+      <img src="evidencias/sucesso_ativo1.jpg" width="400">
+    </td>
+    <td align="center">
+      <strong>Sucesso ao Adicionar Ativo II</strong><br>
+      <img src="evidencias/sucesso_ativo2.jpg" width="400">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Sucesso ao Editar Perfil</strong><br>
+      <img src="evidencias/sucesso_perfil.jpg" width="400">
+    </td>
+    <td align="center">
+      <strong>Tela de Logout</strong><br>
+      <img src="evidencias/sessao_encerrada.jpg" width="400">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <strong>Dados no Banco (Clientes)</strong><br>
+      <img src="evidencias/datarium_cliente_banco.jpg" width="400">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <strong>Dados no Banco (Ativos)</strong><br>
+      <img src="evidencias/datarium_ativo_banco.jpg" width="400">
+    </td>
+  </tr>
+</table>
